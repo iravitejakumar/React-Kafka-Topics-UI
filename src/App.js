@@ -23,6 +23,7 @@ this.state={title:"Hello"};
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
        <CustomTable/>
+       <div>{this.props.children}</div>
       </div>  
         </MuiThemeProvider>  
     );
