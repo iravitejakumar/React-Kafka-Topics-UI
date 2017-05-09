@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './kafka.svg';
+
 import './App.css';
 import CustomTable from './Table/table.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 class App extends Component {
 
 constructor(props){
@@ -14,14 +20,11 @@ this.state={title:"Hello"};
     return (
         <MuiThemeProvider>
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        {this.state.title}
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+       <AppBar
+          title="Kafka Topics UI"
+          iconElementLeft={<IconButton><img src={logo}/></IconButton>}
+          iconElementRight={<IconButton><MoreVertIcon /></IconButton>}
+        />
        <CustomTable/>
        <div>{this.props.children}</div>
       </div>  
